@@ -1,0 +1,32 @@
+{
+  "name": "ndoebackendfso",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:ui": "rm -rf build && cd ../part2-notes && yarn build && cp -r build ../nodebackendfso",
+    "deploy": "fly deploy",
+    "deploy:full": "yarn build:ui && yarn deploy",
+    "logs:prod": "fly logs",
+    "lint": "eslint .",
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "jest --verbose"
+  },
+  "author": "Alexander Baikalov",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "mongoose": "^7.0.3"
+  },
+  "devDependencies": {
+    "eslint": "^8.36.0",
+    "jest": "^29.5.0",
+    "nodemon": "^2.0.22"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  }
+}
